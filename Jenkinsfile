@@ -1,7 +1,9 @@
 pipeline{
     
     agent any
-        
+     
+    stages{
+
         stage("build") {
             steps {
                 sh "./mvnw package"
@@ -15,6 +17,5 @@ pipeline{
                 junit 'target/surefire-reports/TEST*.xml'
             }
         }
-    
     }
 }
